@@ -1,1 +1,260 @@
-Hello github
+<!doctype html>
+<html lang="th">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Portfolio — ชื่อของคุณ</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<h1 class="logo">ชื่อของคุณ</h1>
+			<nav class="nav">
+				<a href="#about">เกี่ยวกับ</a>
+				<a href="#projects">โปรเจกต์</a>
+				<a href="#gps">Check-in GPS</a>
+				<a href="#contact">ติดต่อ</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container">
+				<h2>สวัสดี — ฉันคือ sawatdipong</h2>
+				<p class="lead">นักพัฒนาเว็บ / นักออกแบบ UI • สร้างประสบการณ์ที่ใช้ง่ายและสวยงาม</p>
+				<p><a class="btn" href="#projects">ดูโปรเจกต์ของฉัน</a></p>
+			</div>
+		</section>
+
+		<section id="about" class="container about">
+			<h3>เกี่ยวกับฉัน</h3>
+			<p>ผม/ฉันเป็นนักพัฒนาที่เชี่ยวชาญด้าน HTML, CSS, JavaScript และมีประสบการณ์ในการสร้างเว็บที่ตอบสนองต่อทุกอุปกรณ์ ทำงานร่วมกับทีมและดูแลโปรเจกต์ตั้งแต่ต้นจนจบ</p>
+		</section>
+
+		<section id="gps" class="container gps-panel">
+			<h3>ระบบ Check-in ด้วย GPS</h3>
+			<p>อนุญาตให้เข้าถึงพิกัดของคุณเพื่อเช็กอินเมื่ออยู่ภายในพื้นที่ที่กำหนดไว้</p>
+			<div class="gps-controls">
+				<label>
+					<span>ละติจูด</span>
+					<input id="latInput" type="number" step="0.000001" value="13.7563">
+				</label>
+				<label>
+					<span>ลองติจูด</span>
+					<input id="lngInput" type="number" step="0.000001" value="100.5018">
+				</label>
+				<label>
+					<span>รัศมี (เมตร)</span>
+					<input id="radiusInput" type="number" min="10" step="1" value="100">
+				</label>
+				<button id="setTargetBtn" class="btn secondary">ตั้งเป็นจุด Check-in</button>
+				<button id="useCurrentBtn" class="btn secondary">ใช้ตำแหน่งปัจจุบัน</button>
+				<button id="checkInBtn" class="btn">Check-in ตอนนี้</button>
+			</div>
+			<div id="gpsStatus" class="status info">ยังไม่ได้ตั้งจุด Check-in</div>
+			<div class="info-grid">
+				<div><strong>จุดเป้าหมาย:</strong> <span id="targetInfo">-</span></div>
+				<div><strong>ระยะห่าง:</strong> <span id="distanceInfo">-</span></div>
+				<div><strong>Check-in ล่าสุด:</strong> <span id="lastCheckinInfo">-</span></div>
+			</div>
+			<ul id="historyList" class="history-list"></ul>
+		</section>
+
+		<section id="projects" class="container projects">
+			<h3>โปรเจกต์ตัวอย่าง</h3>
+			<div class="grid">
+				<article class="card">
+					<img src="https://via.placeholder.com/800x450?text=Project+1" alt="Project 1">
+					<h4>Project 1 — เว็บไซต์แสดงผลงาน</h4>
+					<p>เว็บโชว์ผลงานที่ออกแบบให้ลูกค้า ดูตัวอย่างและรายละเอียดโค้ดบน GitHub.</p>
+					<p><a class="link" href="#">รายละเอียด</a></p>
+				</article>
+
+				<article class="card">
+					<img src="https://via.placeholder.com/800x450?text=Project+2" alt="Project 2">
+					<h4>Project 2 — แอปจัดการงาน</h4>
+					<p>แอปช่วยจัดการงานประจำวันที่ใช้เทคโนโลยี React และ Firebase.</p>
+					<p><a class="link" href="#">รายละเอียด</a></p>
+				</article>
+
+				<article class="card">
+					<img src="https://via.placeholder.com/800x450?text=Project+3" alt="Project 3">
+					<h4>Project 3 — เว็บบล็อกส่วนตัว</h4>
+					<p>บล็อกที่รองรับการเขียนบทความและ SEO เบื้องต้น ใช้ระบบสแตติกเจนเนอเรเตอร์</p>
+					<p><a class="link" href="#">รายละเอียด</a></p>
+				</article>
+			</div>
+		</section>
+
+		<section id="contact" class="container contact">
+			<h3>ติดต่อ</h3>
+			<p>อยากคุยงานหรือร่วมงาน ติดต่อได้ที่</p>
+			<ul>
+				<li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
+				<li>LinkedIn: <a href="#">โปรไฟล์ของคุณ</a></li>
+				<li>GitHub: <a href="#">github.com/username</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<small>© 2026 ชื่อของคุณ — สร้างด้วย ❤️</small>
+		</div>
+	</footer>
+
+	<script>
+	const STORAGE_KEY = 'gps-checkin-demo';
+	const TARGET_KEY = `${STORAGE_KEY}:target`;
+	const HISTORY_KEY = `${STORAGE_KEY}:history`;
+
+	const latInput = document.getElementById('latInput');
+	const lngInput = document.getElementById('lngInput');
+	const radiusInput = document.getElementById('radiusInput');
+	const gpsStatus = document.getElementById('gpsStatus');
+	const targetInfo = document.getElementById('targetInfo');
+	const distanceInfo = document.getElementById('distanceInfo');
+	const lastCheckinInfo = document.getElementById('lastCheckinInfo');
+	const historyList = document.getElementById('historyList');
+	let targetLocation = null;
+
+	function showStatus(message, type = 'info') {
+		gpsStatus.textContent = message;
+		gpsStatus.className = `status ${type}`;
+	}
+
+	function formatCoordinate(value) {
+		return Number(value).toFixed(6);
+	}
+
+	function toRadians(deg) {
+		return deg * (Math.PI / 180);
+	}
+
+	function getDistanceMeters(lat1, lng1, lat2, lng2) {
+		const earthRadius = 6371000;
+		const dLat = toRadians(lat2 - lat1);
+		const dLng = toRadians(lng2 - lng1);
+		const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLng / 2) ** 2;
+		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		return earthRadius * c;
+	}
+
+	function updateTargetInfo() {
+		if (!targetLocation) {
+			targetInfo.textContent = '-';
+			return;
+		}
+		targetInfo.textContent = `${formatCoordinate(targetLocation.lat)}, ${formatCoordinate(targetLocation.lng)} • ${targetLocation.radius}m`;
+	}
+
+	function renderHistory() {
+		const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+		if (!history.length) {
+			historyList.innerHTML = '<li>ยังไม่มีประวัติการ Check-in</li>';
+			return;
+		}
+		historyList.innerHTML = history.map((item) => `
+			<li>
+				<strong>${item.time}</strong>
+				<div>ระยะห่าง ${Math.round(item.distance)} เมตร</div>
+				<div>พิกัด ${formatCoordinate(item.latitude)}, ${formatCoordinate(item.longitude)}</div>
+			</li>
+		`).join('');
+	}
+
+	function saveHistory(entry) {
+		const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+		history.unshift(entry);
+		localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 5)));
+		renderHistory();
+	}
+
+	function requestLocation(successCallback, errorCallback) {
+		if (!navigator.geolocation) {
+			errorCallback('เบราว์เซอร์นี้ไม่รองรับ GPS');
+			return;
+		}
+		navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+			enableHighAccuracy: true,
+			timeout: 10000,
+			maximumAge: 0
+		});
+	}
+
+	function setTargetFromInputs() {
+		const lat = Number(latInput.value);
+		const lng = Number(lngInput.value);
+		const radius = Number(radiusInput.value);
+
+		if (!Number.isFinite(lat) || !Number.isFinite(lng) || !Number.isFinite(radius) || radius <= 0) {
+			showStatus('กรุณากรอกค่าพิกัดและรัศมีให้ถูกต้อง', 'error');
+			return;
+		}
+
+		targetLocation = { lat, lng, radius };
+		localStorage.setItem(TARGET_KEY, JSON.stringify(targetLocation));
+		updateTargetInfo();
+		showStatus(`ตั้งจุด Check-in แล้วในรัศมี ${radius} เมตร`, 'success');
+	}
+
+	document.getElementById('setTargetBtn').addEventListener('click', setTargetFromInputs);
+
+	document.getElementById('useCurrentBtn').addEventListener('click', () => {
+		showStatus('กำลังรับตำแหน่งปัจจุบัน...', 'info');
+		requestLocation((position) => {
+			latInput.value = position.coords.latitude.toFixed(6);
+			lngInput.value = position.coords.longitude.toFixed(6);
+			setTargetFromInputs();
+		}, (error) => {
+			showStatus(`ไม่สามารถรับตำแหน่งได้: ${error.message || error}`, 'error');
+		});
+	});
+
+	document.getElementById('checkInBtn').addEventListener('click', () => {
+		if (!targetLocation) {
+			showStatus('ยังไม่ได้ตั้งจุด Check-in', 'error');
+			return;
+		}
+		showStatus('กำลังตรวจตำแหน่ง...', 'info');
+		requestLocation((position) => {
+			const distance = getDistanceMeters(
+				targetLocation.lat,
+				targetLocation.lng,
+				position.coords.latitude,
+				position.coords.longitude
+			);
+			distanceInfo.textContent = `${Math.round(distance)} เมตร`;
+			if (distance <= targetLocation.radius) {
+				const entry = {
+					time: new Date().toLocaleString('th-TH'),
+					latitude: position.coords.latitude,
+					longitude: position.coords.longitude,
+					distance
+				};
+				lastCheckinInfo.textContent = entry.time;
+				saveHistory(entry);
+				showStatus(`Check-in สำเร็จ! คุณอยู่ห่าง ${Math.round(distance)} เมตร`, 'success');
+			} else {
+				showStatus(`คุณอยู่นอกพื้นที่ Check-in (${Math.round(distance)} เมตร)`, 'error');
+			}
+		}, (error) => {
+			showStatus(`ไม่สามารถรับตำแหน่งได้: ${error.message || error}`, 'error');
+		});
+	});
+
+	const savedTarget = JSON.parse(localStorage.getItem(TARGET_KEY) || 'null');
+	if (savedTarget) {
+		targetLocation = savedTarget;
+		latInput.value = savedTarget.lat;
+		lngInput.value = savedTarget.lng;
+		radiusInput.value = savedTarget.radius;
+		updateTargetInfo();
+		showStatus('โหลดจุด Check-in ที่เคยตั้งไว้แล้ว', 'info');
+	}
+	renderHistory();
+	</script>
+</body>
+</html>
