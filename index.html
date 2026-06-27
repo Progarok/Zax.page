@@ -39,15 +39,15 @@
 			<div class="gps-controls">
 				<label>
 					<span>ละติจูด</span>
-					<input id="latInput" type="number" step="0.000001" value="13.7563">
+					<input id="latInput" type="number" step="0.000001" value="14.7998943">
 				</label>
 				<label>
 					<span>ลองติจูด</span>
-					<input id="lngInput" type="number" step="0.000001" value="100.5018">
+					<input id="lngInput" type="number" step="0.000001" value="100.6220915">
 				</label>
 				<label>
 					<span>รัศมี (เมตร)</span>
-					<input id="radiusInput" type="number" min="10" step="1" value="100">
+					<input id="radiusInput" type="number" min="10" step="1" value="1000">
 				</label>
 				<button id="setTargetBtn" class="btn secondary">ตั้งเป็นจุด Check-in</button>
 				<button id="useCurrentBtn" class="btn secondary">ใช้ตำแหน่งปัจจุบัน</button>
@@ -253,6 +253,11 @@
 		radiusInput.value = savedTarget.radius;
 		updateTargetInfo();
 		showStatus('โหลดจุด Check-in ที่เคยตั้งไว้แล้ว', 'info');
+	} else {
+		targetLocation = { lat: 14.7998943, lng: 100.6220915, radius: 1000 };
+		localStorage.setItem(TARGET_KEY, JSON.stringify(targetLocation));
+		updateTargetInfo();
+		showStatus('ใช้พิกัดมหาวิทยาลัยราชภัฏเทพสตรีเป็นจุด Check-in เริ่มต้น', 'info');
 	}
 	renderHistory();
 	</script>
