@@ -3,16 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Portfolio — ชื่อของคุณ</title>
+	<title>GPS Check-in System</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<header class="site-header">
 		<div class="container">
-			<h1 class="logo">ชื่อของคุณ</h1>
+			<h1 class="logo">ระบบเช็คชื่อด้วย GPS</h1>
 			<nav class="nav">
 				<a href="#about">เกี่ยวกับ</a>
-				<a href="#projects">โปรเจกต์</a>
 				<a href="#gps">Check-in GPS</a>
 				<a href="#contact">ติดต่อ</a>
 			</nav>
@@ -22,21 +21,24 @@
 	<main>
 		<section class="hero">
 			<div class="container">
-				<h2>สวัสดี — ฉันคือ sawatdipong</h2>
-				<p class="lead">นักพัฒนาเว็บ / นักออกแบบ UI • สร้างประสบการณ์ที่ใช้ง่ายและสวยงาม</p>
-				<p><a class="btn" href="#projects">ดูโปรเจกต์ของฉัน</a></p>
+				<h2>เช็คชื่อด้วยตำแหน่งที่ตั้ง</h2>
+				<p class="lead">ระบบนี้ช่วยให้ผู้ใช้เช็คชื่อได้เฉพาะเมื่ออยู่ในพื้นที่ที่กำหนดไว้ และบันทึกข้อมูลลง Firestore แบบเรียลไทม์</p>
 			</div>
 		</section>
 
 		<section id="about" class="container about">
-			<h3>เกี่ยวกับฉัน</h3>
-			<p>ผม/ฉันเป็นนักพัฒนาที่เชี่ยวชาญด้าน HTML, CSS, JavaScript และมีประสบการณ์ในการสร้างเว็บที่ตอบสนองต่อทุกอุปกรณ์ ทำงานร่วมกับทีมและดูแลโปรเจกต์ตั้งแต่ต้นจนจบ</p>
+			<h3>ข้อมูลที่บันทึก</h3>
+			<p>ระบบจะบันทึกชื่อผู้เช็คชื่อ, พิกัดปัจจุบัน, ระยะห่างจากจุดเป้า, รัศมี, สถานะการเช็คชื่อ และเวลาเข้าใช้ลง Firestore</p>
 		</section>
 
 		<section id="gps" class="container gps-panel">
 			<h3>ระบบ Check-in ด้วย GPS</h3>
 			<p>อนุญาตให้เข้าถึงพิกัดของคุณเพื่อเช็กอินเมื่ออยู่ภายในพื้นที่ที่กำหนดไว้</p>
 			<div class="gps-controls">
+				<label>
+					<span>ชื่อผู้เช็คชื่อ</span>
+					<input id="nameInput" type="text" placeholder="กรอกชื่อของคุณ" required>
+				</label>
 				<label>
 					<span>ละติจูด</span>
 					<input id="latInput" type="number" step="0.000001" value="14.7998943">
@@ -62,46 +64,15 @@
 			<ul id="historyList" class="history-list"></ul>
 		</section>
 
-		<section id="projects" class="container projects">
-			<h3>โปรเจกต์ตัวอย่าง</h3>
-			<div class="grid">
-				<article class="card">
-					<img src="https://via.placeholder.com/800x450?text=Project+1" alt="Project 1">
-					<h4>Project 1 — เว็บไซต์แสดงผลงาน</h4>
-					<p>เว็บโชว์ผลงานที่ออกแบบให้ลูกค้า ดูตัวอย่างและรายละเอียดโค้ดบน GitHub.</p>
-					<p><a class="link" href="#">รายละเอียด</a></p>
-				</article>
-
-				<article class="card">
-					<img src="https://via.placeholder.com/800x450?text=Project+2" alt="Project 2">
-					<h4>Project 2 — แอปจัดการงาน</h4>
-					<p>แอปช่วยจัดการงานประจำวันที่ใช้เทคโนโลยี React และ Firebase.</p>
-					<p><a class="link" href="#">รายละเอียด</a></p>
-				</article>
-
-				<article class="card">
-					<img src="https://via.placeholder.com/800x450?text=Project+3" alt="Project 3">
-					<h4>Project 3 — เว็บบล็อกส่วนตัว</h4>
-					<p>บล็อกที่รองรับการเขียนบทความและ SEO เบื้องต้น ใช้ระบบสแตติกเจนเนอเรเตอร์</p>
-					<p><a class="link" href="#">รายละเอียด</a></p>
-				</article>
-			</div>
-		</section>
-
 		<section id="contact" class="container contact">
 			<h3>ติดต่อ</h3>
-			<p>อยากคุยงานหรือร่วมงาน ติดต่อได้ที่</p>
-			<ul>
-				<li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
-				<li>LinkedIn: <a href="#">โปรไฟล์ของคุณ</a></li>
-				<li>GitHub: <a href="#">github.com/username</a></li>
-			</ul>
+			<p>หากต้องการต่อยอดระบบให้เชื่อมต่อกับฐานข้อมูลจริงหรือแอปมือถือ ติดต่อได้</p>
 		</section>
 	</main>
 
 	<footer class="site-footer">
 		<div class="container">
-			<small>© 2026 ชื่อของคุณ — สร้างด้วย ❤️</small>
+			<small>© 2026 GPS Check-in System</small>
 		</div>
 	</footer>
 
@@ -110,6 +81,7 @@
 	const TARGET_KEY = `${STORAGE_KEY}:target`;
 	const HISTORY_KEY = `${STORAGE_KEY}:history`;
 
+	const nameInput = document.getElementById('nameInput');
 	const latInput = document.getElementById('latInput');
 	const lngInput = document.getElementById('lngInput');
 	const radiusInput = document.getElementById('radiusInput');
@@ -150,26 +122,38 @@
 		targetInfo.textContent = `${formatCoordinate(targetLocation.lat)}, ${formatCoordinate(targetLocation.lng)} • ${targetLocation.radius}m`;
 	}
 
-	function renderHistory() {
-		const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+	function renderHistory(history = []) {
 		if (!history.length) {
 			historyList.innerHTML = '<li>ยังไม่มีประวัติการ Check-in</li>';
 			return;
 		}
 		historyList.innerHTML = history.map((item) => `
 			<li>
-				<strong>${item.time}</strong>
-				<div>ระยะห่าง ${Math.round(item.distance)} เมตร</div>
+				<strong>${item.name || 'ไม่ระบุชื่อ'}</strong>
+				<div>${item.status === 'inside' ? 'อยู่ในพื้นที่' : 'อยู่นอกพื้นที่'}</div>
+				<div>ระยะห่าง ${Math.round(item.distance || 0)} เมตร</div>
 				<div>พิกัด ${formatCoordinate(item.latitude)}, ${formatCoordinate(item.longitude)}</div>
+				<div>${item.checked_at ? new Date(item.checked_at).toLocaleString('th-TH') : item.time}</div>
 			</li>
 		`).join('');
 	}
 
-	function saveHistory(entry) {
+	function saveHistoryLocally(entry) {
 		const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
 		history.unshift(entry);
 		localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 5)));
-		renderHistory();
+	}
+
+	async function loadHistoryFromServer() {
+		try {
+			const response = await fetch('/api/checkins');
+			if (!response.ok) throw new Error('load failed');
+			const items = await response.json();
+			renderHistory(items);
+		} catch (error) {
+			const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+			renderHistory(history);
+		}
 	}
 
 	function requestLocation(successCallback, errorCallback) {
@@ -213,13 +197,18 @@
 		});
 	});
 
-	document.getElementById('checkInBtn').addEventListener('click', () => {
+	document.getElementById('checkInBtn').addEventListener('click', async () => {
+		const name = nameInput.value.trim();
+		if (!name) {
+			showStatus('กรุณากรอกชื่อผู้เช็คชื่อก่อน', 'error');
+			return;
+		}
 		if (!targetLocation) {
 			showStatus('ยังไม่ได้ตั้งจุด Check-in', 'error');
 			return;
 		}
 		showStatus('กำลังตรวจตำแหน่ง...', 'info');
-		requestLocation((position) => {
+		requestLocation(async (position) => {
 			const distance = getDistanceMeters(
 				targetLocation.lat,
 				targetLocation.lng,
@@ -227,18 +216,33 @@
 				position.coords.longitude
 			);
 			distanceInfo.textContent = `${Math.round(distance)} เมตร`;
-			if (distance <= targetLocation.radius) {
-				const entry = {
-					time: new Date().toLocaleString('th-TH'),
-					latitude: position.coords.latitude,
-					longitude: position.coords.longitude,
-					distance
-				};
-				lastCheckinInfo.textContent = entry.time;
-				saveHistory(entry);
+			const status = distance <= targetLocation.radius ? 'inside' : 'outside';
+			const entry = {
+				time: new Date().toLocaleString('th-TH'),
+				name,
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
+				distance,
+				status,
+				targetLatitude: targetLocation.lat,
+				targetLongitude: targetLocation.lng,
+				radius: targetLocation.radius
+			};
+			lastCheckinInfo.textContent = entry.time;
+			saveHistoryLocally(entry);
+
+			try {
+				const response = await fetch('/api/checkin', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(entry)
+				});
+				const result = await response.json();
+				if (!response.ok) throw new Error(result.error || 'ไม่สามารถบันทึกได้');
+				await loadHistoryFromServer();
 				showStatus(`Check-in สำเร็จ! คุณอยู่ห่าง ${Math.round(distance)} เมตร`, 'success');
-			} else {
-				showStatus(`คุณอยู่นอกพื้นที่ Check-in (${Math.round(distance)} เมตร)`, 'error');
+			} catch (error) {
+				showStatus(`บันทึกข้อมูลไม่สำเร็จ: ${error.message}`, 'error');
 			}
 		}, (error) => {
 			showStatus(`ไม่สามารถรับตำแหน่งได้: ${error.message || error}`, 'error');
@@ -259,7 +263,7 @@
 		updateTargetInfo();
 		showStatus('ใช้พิกัดมหาวิทยาลัยราชภัฏเทพสตรีเป็นจุด Check-in เริ่มต้น', 'info');
 	}
-	renderHistory();
+	loadHistoryFromServer();
 	</script>
 </body>
 </html>
